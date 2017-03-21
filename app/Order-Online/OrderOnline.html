@@ -56,11 +56,12 @@
             </div>
         </div>
     </div>
-    <div class="container">
+
+    <div class="container" id="formBlock">
         <div class="row">
             <div class="col-md-10">
                 <div class="well well-sm">
-                    <form>
+                    <form id="orderOnline">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -83,32 +84,32 @@
                                         <input type="email" class="form-control" id="email" placeholder="Enter Phone Number" required="required" /></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="subject">
+                                    <label for="menu">
                                     Menu</label>
-                                    <select id="subject" name="subject" class="form-control" required="required">
+                                    <select id="menu" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
-                                    <option value="service">Basic Lunch Menu</option>
-                                    <option value="suggestions">Healthy Nut Lunch</option>
-                                    <option value="product">Backyard BBQ Dinner</option>
-                                      <option value="product">Classic Dinner Menu</option>
+                                    <option value="Basic Lunch Menu">Basic Lunch Menu</option>
+                                    <option value="Healthy Nut Lunch">Healthy Nut Lunch</option>
+                                    <option value="Backyard BBQ Dinner">Backyard BBQ Dinner</option>
+                                      <option value="Classic Dinner Menu">Classic Dinner Menu</option>
                                 </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="subject">
+                                    <label for="numPeople">
                                     Number of People</label>
-                                    <select id="subject" name="subject" class="form-control" required="required">
+                                    <select id="numPeople" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
-                                    <option value="service">Less Than 10</option>
-                                    <option value="suggestions">Between 10 and 20</option>
-                                    <option value="product">Between 20 and 30</option>
-                                      <option value="product">More Than 30</option>
+                                    <option value="Less than 10">Less Than 10</option>
+                                    <option value="Between 10 and 20">Between 10 and 20</option>
+                                    <option value="Between 20 and 30">Between 20 and 30</option>
+                                      <option value="More than 30">More Than 30</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">Additional Information </label>
-                                    <textarea name="message" id="message" class="form-control" rows="18" cols="25" required="required"
+                                    <textarea name="message" id="comments" class="form-control" rows="18" cols="25" required="required"
                                     placeholder="Please Provide Additional Comments Regarding Your Event.."></textarea>
                                 </div>
                             </div>
@@ -119,6 +120,57 @@
                         </div>
                     </form>
                 </div>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+
+                        $('#orderOnline').on('submit', function(e) {
+                            e.preventDefault();
+
+                            //get the name field value
+                            var name = $('#name').val();
+
+                            //get the name field value
+                            var email = $('#email').val();
+
+                            //get the phone number field
+                            var phoneNumber = $('#phoneNumber').val();
+
+                            //gets subject
+                            var menu = $('#menu').val();
+
+                            //GETS NUMBER OF PEOPLE
+                            var numPeople = $('#numPeople').val();
+
+                            //get the comments
+                            var comments = $('#comments').val();
+
+                            //send to formspree
+                            $.ajax({
+                                url: 'https://formspree.io/alisonsinger_2017@depauw.edu',
+                                method: 'POST',
+                                data: {
+                                    name: name,
+                                    phoneNumber: phoneNumber,
+                                    menu: menu,
+                                    _replyto: email,
+                                    email: email,
+                                    numPeople: numPeople,
+                                    comments: comments,
+                                    _subject: 'My Form Submission',
+                                },
+                                dataType: "json",
+                                success: function() {
+                                    console.log('success');
+                                    $('#formBlock').hide();
+                                    $('#thankyouBlock').show();
+                                }
+                            });
+                        });
+                    });
+
+
+                </script>
 
 </body>
 

@@ -67,7 +67,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form group">
-                                    <label for="name">Name:</label>
+                                    <label for="name">Name:</label></br>
                                 <input type="text" id="name" placeholder="Enter name" required="required" />
                                 </div>
                                 <div class="form group">
@@ -102,16 +102,15 @@
                           </div>
               </div>
               <div class="col-md-12">
-                               <button type="submit" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
+                               <button type="submit" class="btn btn-success btn-lg pull-right RbtnMargin" onclick="myfunc()"id="ContactButton">
                                Send Message</button>
                            </div>
                        </div>
                    </form>
                </div>
-                    <div id="thankyouBlock" style="display:none">
-                        <p>
-                            Thank you for filling out the form. I care a lot about it.
-                        </p>
+
+                    <div id="thankyouBlock" style="">
+                      
                     </div>
 
                     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -135,8 +134,6 @@
                                 //get the comments
                                 var comments = $('#comments').val();
 
-                                //pretend we don't need validation
-
                                 //send to formspree
                                 $.ajax({
                                     url: 'https://formspree.io/alisonsinger_2017@depauw.edu',
@@ -159,11 +156,11 @@
                                 });
                             });
                         });
+
+
                     </script>
 </body>
 
-
-</html>
 <!-- <div class="col-md-4">
                                <span class="glyphicon glyphicon-map-marker"></span>
                                <p1> Address: 4317 Creekside Pass Zionsville, IN 46077 </p1>
