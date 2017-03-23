@@ -61,32 +61,32 @@
         <div class="row">
             <div class="col-md-10">
                 <div class="well well-sm">
-                    <form id="orderOnline">
+                    <form class="js-form" id="orderOnline">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="name"> Name </label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                    <label for="js-name"> Name </label>
+                                    <input type="text" class="form-control" id="js-name" placeholder="Enter name" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="email"> Email Address</label>
+                                    <label for="js-email"> Email Address</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                         </span>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                                        <input type="email" class="form-control" id="js-email" placeholder="Enter email" required="required" /></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Phone Number">
+                                    <label for="js-phoneNumber">
                                     Phone Number</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span>
                                         </span>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter Phone Number" required="required" /></div>
+                                        <input type="text" class="form-control" id="js-phoneNumber" placeholder="Enter Phone Number" required="required" /></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="menu">
+                                    <label for="js-menu">
                                     Menu</label>
-                                    <select id="menu" name="subject" class="form-control" required="required">
+                                    <select id="js-menu" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
                                     <option value="Basic Lunch Menu">Basic Lunch Menu</option>
                                     <option value="Healthy Nut Lunch">Healthy Nut Lunch</option>
@@ -95,9 +95,9 @@
                                 </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="numPeople">
+                                    <label for="js-numPeople">
                                     Number of People</label>
-                                    <select id="numPeople" name="subject" class="form-control" required="required">
+                                    <select id="js-numPeople" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
                                     <option value="Less than 10">Less Than 10</option>
                                     <option value="Between 10 and 20">Between 10 and 20</option>
@@ -109,9 +109,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">Additional Information </label>
-                                    <textarea name="message" id="comments" class="form-control" rows="18" cols="25" required="required"
+                                    <textarea name="message" id="js-comments" class="form-control" rows="18" cols="25" required="required"
                                     placeholder="Please Provide Additional Comments Regarding Your Event.."></textarea>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="js-password">Password</label>
+                              <input type="password" id="js-password" class="form-control" />
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
@@ -128,22 +132,22 @@
                             e.preventDefault();
 
                             //get the name field value
-                            var name = $('#name').val();
+                            var name = $('#js-name').val();
 
                             //get the name field value
-                            var email = $('#email').val();
+                            var email = $('#js-email').val();
 
                             //get the phone number field
-                            var phoneNumber = $('#phoneNumber').val();
+                            var phoneNumber = $('#js-phoneNumber').val();
 
                             //gets subject
-                            var menu = $('#menu').val();
+                            var menu = $('#js-menu').val();
 
                             //GETS NUMBER OF PEOPLE
-                            var numPeople = $('#numPeople').val();
+                            var numPeople = $('#js-numPeople').val();
 
                             //get the comments
-                            var comments = $('#comments').val();
+                            var comments = $('#js-comments').val();
 
                             //send to formspree
                             $.ajax({
@@ -168,9 +172,84 @@
                             });
                         });
                     });
-
-
                 </script>
+                <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c>darasa</a>
+              </div>
+
+                  <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+
+              <div align="center">
+              <a
+
+              </div>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+              <script type="text/javascript">
+                  $(function() {
+                const config = {
+                  apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
+                  authDomain: "test-ac082.firebaseapp.com",
+                  databaseURL:  "https://test-ac082.firebaseio.com",
+                   storageBucket: "test-ac082.appspot.com",
+                  messagingSenderId: "487246794807"
+                };
+                firebase.initializeApp(config);
+                const state ={
+                 email: "",
+                  password: "",
+
+                }
+
+                $('.js-form').on('submit', event => {
+                  event.preventDefault();
+                  const email = $('#js-email').val() || state.email;
+                  const password = $('#js-password').val() || state.password;
+                  const message = $('#js-comments').val();
+                  const name = $('#js-name').val();
+                  const phoneNumber = $('#js-phoneNumber').val();
+                  const menu = $('#js-menu').val();
+                  const numPeople = $('#js-numPeople').val();
+                  console.log(email, password, message);
+                  firebase.auth().signInWithEmailAndPassword(email, password).then(function(user)
+                  {
+                    state.email = email;
+                    state.password = password;
+                    $('#js-login-data').addClass('hidden');
+
+                    firebase.database().ref('messages').push({
+                    message,
+                    });
+
+                    firebase.database().ref('emails').push({
+                    email,
+                    });
+
+                    firebase.database().ref('Names').push({
+                    name,
+                    });
+
+                    firebase.database().ref('Phone Number').push({
+                    phoneNumber,
+                    });
+
+                    firebase.database().ref('Menu').push({
+                    menu,
+                    });
+
+                    firebase.database().ref('Number of People').push({
+                    numPeople,
+                    });
+
+
+                   $('.js-form').trigger('reset');
+                  })
+                  .catch(error =>{
+                  console.log(error);
+                  });
+
+                });
+              });</script>
+
 
 </body>
 

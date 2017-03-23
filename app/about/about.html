@@ -56,11 +56,99 @@
                 </div>
             </div>
         </div>
-        <div id="about" class="container-fluid">
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form class="js-form">
+        <div id="js-login-data">
+          <div class="form-group">
+            <label for="js-email">Email</label>
+            <input type="email" id="js-email" class="form-control" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="js-password">Password</label>
+            <input type="password" id="js-password" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="js-message">Message</label>
+          <input type="message" id="js-message" class="form-control" />
+        </div>
+        <button id="js-submit" class="btn btn-primary">submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c>darasa</a>
+</div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+
+<div align="center">
+<a
+
+</div>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+  const config = {
+    apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
+    authDomain: "test-ac082.firebaseapp.com",
+    databaseURL:  "https://test-ac082.firebaseio.com",
+     storageBucket: "test-ac082.appspot.com",
+    messagingSenderId: "487246794807"
+  };
+  firebase.initializeApp(config);
+  const state ={
+   email: "",
+    password: "",
+
+  }
+
+  $('.js-form').on('submit', event => {
+    event.preventDefault();
+    const email = $('#js-email').val() || state.email;
+    const password = $('#js-password').val() || state.password;
+    const message = $('#js-message').val();
+    console.log(email, password, message);
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(user)
+    {
+      state.email = email;
+      state.password = password;
+      $('#js-login-data').addClass('hidden');
+
+      firebase.database().ref('messages').push({
+      message,
+      });
+
+      firebase.database().ref('emails').push({
+      email,
+      });
+
+
+
+     $('.js-form').trigger('reset');
+    })
+    .catch(error =>{
+    console.log(error);
+    });
+
+  });
+});</script>
+
+        <!-- <div id="about" class="container-fluid">
               <div class="about">
                   <h6 class=h10>Our Story</h6>
                   <h5>Stacy's Catering began in 2015 when someone asked Stacy to cater their dinner party.
                      Stacy has always loved to cook so she decided to start catering out of the house.
                      She has started catering large events.  She is hoping to expand her company. She loves to
                      cook simple, fresh, delicious food.</h5>
-              </div>
+              </div> -->
+
+    </body>
+    </html>
