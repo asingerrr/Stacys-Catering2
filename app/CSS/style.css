@@ -240,3 +240,16 @@ p1{
 
 
 }
+
+
+.gallery
+{
+    display: inline-block;
+    margin-top: 60px;
+}
+
+.thumbnail-fancybox{
+  margin-top: 60px;
+
+
+}

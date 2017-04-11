@@ -98,14 +98,16 @@
                                                           <div class="col-md-6">
                                                 <div class="form group">
                                                           <label for="js-comments">Message:</label>
-                                                          <textarea name="message" id="js-comments" class="form-control" rows="13" cols="25" required="required" placeholder="Enter Message"></textarea>
+                                                          <textarea name="message" id="js-comments" class="form-control" rows="14" cols="25" required="required" placeholder="Enter Message"></textarea>
                                                         </div>
                                             </div>
 
       <div class="form-group">
+          <div class = "col-xs-6">
         <label for="js-password">Password</label>
         <input type="password" id="js-password" class="form-control" />
       </div>
+    </div>
     </div>
     <div class="col-md-12">
                      <button type="js-submit" id="success" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
@@ -119,12 +121,12 @@
 </div>
 </div>
 </div>
-  
+
 
                     <div id="thankyouBlock" style="display:none">
                       <p1> thanks for submitting your form!</p1>
                     </div>
-
+<!--Pushes information to email (formspree)-->
                     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
                     <script type="text/javascript">
                         $(document).ready(function() {
@@ -171,7 +173,9 @@
 
 
                     </script>
-                    <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c>darasa</a>
+
+          <!-- Stores data in database (firebasejs)-->
+                    <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c></a>
                   </div>
 
                       <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
@@ -188,7 +192,7 @@
                       apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
                       authDomain: "test-ac082.firebaseapp.com",
                       databaseURL:  "https://test-ac082.firebaseio.com",
-                       storageBucket: "test-ac082.appspot.com",
+                      storageBucket: "test-ac082.appspot.com",
                       messagingSenderId: "487246794807"
                     };
                     firebase.initializeApp(config);

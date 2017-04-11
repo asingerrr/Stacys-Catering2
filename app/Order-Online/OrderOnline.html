@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-
+<!--Online Order Form-->
     <div class="container" id="formBlock">
         <div class="row">
             <div class="col-md-10">
@@ -66,6 +66,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="js-name"> Name </label>
+
                                     <input type="text" class="form-control" id="js-name" placeholder="Enter name" required="required" />
                                 </div>
                                 <div class="form-group">
@@ -114,9 +115,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                              <div class = "col-xs-6">
                               <label for="js-password">Password</label>
                               <input type="password" id="js-password" class="form-control" />
                             </div>
+                          </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
                               Submit Request</button>
@@ -124,6 +127,8 @@
                         </div>
                     </form>
                 </div>
+
+<!--Pushes data to email (formspree)-->
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -173,7 +178,9 @@
                         });
                     });
                 </script>
-                <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c>darasa</a>
+
+      <!--Pushes data to database (Firebase)-->          
+                <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c></a>
               </div>
 
                   <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
