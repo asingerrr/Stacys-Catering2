@@ -26,51 +26,66 @@
 
 </head>
 
+<!--Navbar -->
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default ">
         <div class="container">
 
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-center">
-              <div class = "cater">
-            <img src="Stacy's1.png" alt="cater" width="350" height="260">
-            </div>
-                <li><a href="/index.html">HOME</a> </li>
-                <li><a href="/About/about.html">ABOUT</a></li>
-                <li><a href="/Order-Online/OrderOnline.html">ORDER ONLINE</a></li>
-                <li><a href="/Menu-And-Pricing/MenuAndPricing.html">MENU AND PRICING</a></li>
-                <li><a href="/Photo-Gallery/PhotoGallery.html">PHOTO GALLERY</a></li>
-                <li><a href="/Leave-A-Review/LeaveReview.html">LEAVE A REVIEW</a></li>
-                <li><a href="/Contact-Us/ContactUs.html">CONTACT US</a></li>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-center">
+                    <div class="cater">
+                        <a href="/index.html"> <img src="Stacy's1.png" alt="cater" width="350" height="260"> </a>
+                    </div>
+                    <li><a href="/index.html">HOME</a> </li>
+                    <li><a href="/About/about.html">ABOUT</a></li>
+                    <li><a href="/Menu-And-Pricing/MenuAndPricing.html">MENU AND PRICING</a></li>
+                    <li><a href="/Order-Online/OrderOnline.html">REQUEST AN ORDER</a></li>
+                    <li><a href="/Photo-Gallery/PhotoGallery.html">PHOTO GALLERY</a></li>
+                    <li><a href="/Leave-A-Review/LeaveReview.html">LEAVE A REVIEW</a></li>
+                    <li><a href="/Contact-Us/ContactUs.html">CONTACT US</a></li>
 
-            </ul>
-        </div>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <!--Jumbotron (title) -->
     <div class="jumbotron jumbotron-sm">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12">
-                    <h1u class="h1c"> Order Online </h1u>
+                    <h1u class="h1c"> Request An Order </h1u>
                 </div>
             </div>
         </div>
     </div>
-<!--Online Order Form-->
+
+    <!--Routes here on success -->
+    <div id="thankyouBlock" style="display:none">
+        <div class="alert alert-success">
+            <strong>Thanks for submitting your form! </strong> We will get back to you as soon as possible!
+        </div>
+    </div>
+
+    <!--Online Order Form-->
     <div class="container" id="formBlock">
+
         <div class="row">
             <div class="col-md-10">
                 <div class="well well-sm">
                     <form class="js-form" id="orderOnline">
                         <div class="row">
+                            <p2> &nbsp;&nbsp;&nbsp;&nbsp;Fill out this form to request an order. We will contact you to complete payment and with final details. </p2>
+                            </br>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="js-name"> Name </label>
+                                    <label for="js-name"> Name: </label>
 
                                     <input type="text" class="form-control" id="js-name" placeholder="Enter name" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="js-email"> Email Address</label>
+                                    <label for="js-email"> Email Address:</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                         </span>
@@ -78,57 +93,86 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="js-phoneNumber">
-                                    Phone Number</label>
+                                    Phone Number:</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span>
                                         </span>
-                                        <input type="text" class="form-control" id="js-phoneNumber" placeholder="Enter Phone Number" required="required" /></div>
+                                        <input type="tel" class="form-control" id="js-phoneNumber" placeholder="Enter Phone Number" required="required" /></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="js-menu">
-                                    Menu</label>
+                                    Menu:</label>
                                     <select id="js-menu" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
                                     <option value="Basic Lunch Menu">Basic Lunch Menu</option>
-                                    <option value="Healthy Nut Lunch">Healthy Nut Lunch</option>
+                                    <option value="Health Nut Lunch">Health Nut Lunch</option>
                                     <option value="Backyard BBQ Dinner">Backyard BBQ Dinner</option>
                                       <option value="Classic Dinner Menu">Classic Dinner Menu</option>
+                                        <option value="Classic Dinner Menu">Classic Pizza Dinner</option>
+                                          <option value="Classic Dinner Menu">Italian Dinner</option>
                                 </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="js-numPeople">
-                                    Number of People</label>
+                                    Number of People:</label>
                                     <select id="js-numPeople" name="subject" class="form-control" required="required">
                                     <option value="na" selected="">Choose One:</option>
                                     <option value="Less than 10">Less Than 10</option>
                                     <option value="Between 10 and 20">Between 10 and 20</option>
                                     <option value="Between 20 and 30">Between 20 and 30</option>
-                                      <option value="More than 30">More Than 30</option>
+                                    <option value="More than 30">More Than 30</option>
                                 </select>
                                 </div>
+                                <input type="button" value="VIEW MENU" class="btn btn-primary btn-lg pull-center" id="menuButton" onClick="window.open('StacysCaterin2.pdf');">
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="name">Additional Information </label>
-                                    <textarea name="message" id="js-comments" class="form-control" rows="18" cols="25" required="required"
-                                    placeholder="Please Provide Additional Comments Regarding Your Event.."></textarea>
+                                    <label for="name">Additional Information: </label>
+                                    <textarea name="message" id="js-comments" class="form-control" rows="18" cols="25" required="required" placeholder="Please Provide Additional Comments Regarding Your Event."></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                              <div class = "col-xs-6">
-                              <label for="js-password">Password</label>
-                              <input type="password" id="js-password" class="form-control" />
-                            </div>
-                          </div>
+
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
+                                <button type="submit" class="btn btn-success btn-lg pull-right RbtnMargin" id="SubmitButton">
                               Submit Request</button>
                             </div>
                         </div>
                     </form>
                 </div>
 
-<!--Pushes data to email (formspree)-->
+                <!--Footer -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="mendi-social-networks">
+                            <li class="instagram">
+                                <a href="https://www.instagram.com/stacyscatering/" target="_blank">
+                                    <i class="fa fa-instagram"> </i>
+                                    <p>FOLLOW US ON INSTAGRAM!</p>
+
+                                </a>
+                            </li>
+
+                            <li class="facebook">
+                                <a href="https://www.facebook.com/Stacys-Catering-1808443872808877/" target="_blank">
+                                    <i class="fa fa-facebook"> </i>
+                                    <p> FOLLOW US ON FACEBOOK!</p>
+
+                                </a>
+                            </li>
+
+                            <li class="twitter">
+                                <a href="https://twitter.com/StacysCatering" target="_blank">
+                                    <i class="fa fa-twitter"> </i>
+                                    <p>FOLLOW US ON TWITTER!</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--Pushes data to email (formspree)-->
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -154,6 +198,7 @@
                             //get the comments
                             var comments = $('#js-comments').val();
 
+
                             //send to formspree
                             $.ajax({
                                 url: 'https://formspree.io/alisonsinger_2017@depauw.edu',
@@ -171,7 +216,7 @@
                                 dataType: "json",
                                 success: function() {
                                     console.log('success');
-                                    $('#formBlock').hide();
+
                                     $('#thankyouBlock').show();
                                 }
                             });
@@ -179,84 +224,83 @@
                     });
                 </script>
 
-      <!--Pushes data to database (Firebase)-->          
+                <!--Pushes data to database (Firebase)-->
                 <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c></a>
-              </div>
+            </div>
 
-                  <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
-
-
-              <div align="center">
-              <a
-
-              </div>
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-              <script type="text/javascript">
-                  $(function() {
-                const config = {
-                  apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
-                  authDomain: "test-ac082.firebaseapp.com",
-                  databaseURL:  "https://test-ac082.firebaseio.com",
-                   storageBucket: "test-ac082.appspot.com",
-                  messagingSenderId: "487246794807"
-                };
-                firebase.initializeApp(config);
-                const state ={
-                 email: "",
-                  password: "",
-
-                }
-
-                $('.js-form').on('submit', event => {
-                  event.preventDefault();
-                  const email = $('#js-email').val() || state.email;
-                  const password = $('#js-password').val() || state.password;
-                  const message = $('#js-comments').val();
-                  const name = $('#js-name').val();
-                  const phoneNumber = $('#js-phoneNumber').val();
-                  const menu = $('#js-menu').val();
-                  const numPeople = $('#js-numPeople').val();
-                  console.log(email, password, message);
-                  firebase.auth().signInWithEmailAndPassword(email, password).then(function(user)
-                  {
-                    state.email = email;
-                    state.password = password;
-                    $('#js-login-data').addClass('hidden');
-
-                    firebase.database().ref('messages').push({
-                    message,
-                    });
-
-                    firebase.database().ref('emails').push({
-                    email,
-                    });
-
-                    firebase.database().ref('Names').push({
-                    name,
-                    });
-
-                    firebase.database().ref('Phone Number').push({
-                    phoneNumber,
-                    });
-
-                    firebase.database().ref('Menu').push({
-                    menu,
-                    });
-
-                    firebase.database().ref('Number of People').push({
-                    numPeople,
-                    });
+            <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 
 
-                   $('.js-form').trigger('reset');
-                  })
-                  .catch(error =>{
-                  console.log(error);
-                  });
+            <div align="center">
+                <a </div>
+                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        $(function() {
+                            const config = {
+                                apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
+                                authDomain: "test-ac082.firebaseapp.com",
+                                databaseURL: "https://test-ac082.firebaseio.com",
+                                storageBucket: "test-ac082.appspot.com",
+                                messagingSenderId: "487246794807"
+                            };
+                            firebase.initializeApp(config);
+                            const state = {
+                              //hard code credentials to store into DB
+                                email: "alisonsinger_2017@depauw.edu",
+                                password: "Mittens3!",
+                            }
 
-                });
-              });</script>
+                            $('.js-form').on('submit', event => {
+                                event.preventDefault();
+                                const email = state.email;
+                                const userEmail = $('#js-email').val();
+                                const password = state.password;
+                                const message = $('#js-comments').val();
+                                const name = $('#js-name').val();
+                                const menu = $('#js-menu').val();
+                                const numPeople = $('#js-numPeople').val();
+                                const phoneNumber = $('#js-phoneNumber').val();
+                                const subject = $('#js-subject').val();
+                                console.log(email, password, message);
+                                firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+                                        state.email = email;
+                                        state.password = password;
+                                        $('#js-login-data').addClass('hidden');
 
+                                        firebase.database().ref('messages').push({
+                                            message,
+                                        });
+
+                                        firebase.database().ref('emails').push({
+                                            userEmail,
+                                        });
+
+                                        firebase.database().ref('Names').push({
+                                            name,
+                                        });
+
+                                        firebase.database().ref('Phone Number').push({
+                                            phoneNumber,
+                                        });
+
+                                        firebase.database().ref('Menu').push({
+                                            menu,
+                                        });
+
+                                        firebase.database().ref('Number of People').push({
+                                            numPeople,
+                                        });
+
+
+                                        $('.js-form').trigger('reset');
+                                    })
+                                    .catch(error => {
+                                        console.log(error);
+                                    });
+
+                            });
+                        });
+                    </script>
 
 </body>
 

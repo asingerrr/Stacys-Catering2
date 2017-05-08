@@ -1,4 +1,5 @@
 var http = require('http');
+var dotenv = require('dotenv').load();
 var express = require('express');
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
@@ -27,7 +28,7 @@ var smtTransport = nodemailer.createTransport("SMTP", {
   port: 465,
     auth: {
       user: 'alisonsinger_2017@depauw.edu',
-      pass: ''
+      pass: process.env.GMAIL_PASSWORD
     }
 });
 var mailOptions = {

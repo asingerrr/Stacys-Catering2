@@ -26,20 +26,21 @@
 
 
 </head>
+<!-- Navbar-->
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default ">
         <div class="container">
 
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-center">
                     <div class="cater">
-                        <img src="Stacy's1.png" alt="cater" width="350" height="260">
+                        <a href="/index.html"> <img src="Stacy's1.png" alt="cater" width="350" height="260"> </a>
                     </div>
                     <li><a href="/index.html">HOME</a> </li>
                     <li><a href="/About/about.html">ABOUT</a></li>
-                    <li><a href="/Order-Online/OrderOnline.html">ORDER ONLINE</a></li>
                     <li><a href="/Menu-And-Pricing/MenuAndPricing.html">MENU AND PRICING</a></li>
+                    <li><a href="/Order-Online/OrderOnline.html">REQUEST AN ORDER</a></li>
                     <li><a href="/Photo-Gallery/PhotoGallery.html">PHOTO GALLERY</a></li>
                     <li><a href="/Leave-A-Review/LeaveReview.html">LEAVE A REVIEW</a></li>
                     <li><a href="/Contact-Us/ContactUs.html">CONTACT US</a></li>
@@ -48,6 +49,9 @@
             </div>
         </div>
     </nav>
+
+
+    <!-- Jumbotron (title for each tab)-->
     <div class="jumbotron jumbotron-sm">
         <div class="container">
             <div class="row">
@@ -58,34 +62,44 @@
         </div>
     </div>
 
+    <!-- Routes to this block on form submission-->
+    <div id="thankyouBlock" style="display:none">
+        <div class="alert alert-success">
+            <strong>Thanks for submitting your form! </strong> We will get back to you as soon as possible!
+        </div>
+    </div>
+
+    <!--Begin Contact Form-->
     <div class="container" id="formBlock">
         <div class="row">
             <div class="col-md-8">
                 <div class="well well-sm">
-                    <form class = "js-form" id="contactForm">
+                    <form class="js-form" id="contactForm">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form group">
-                                    <label for="js-name">Name:</label></br>
-                                <input type="text" class: "form-control" id="js-name" placeholder="Enter name" required="required" />
+
+                                <div class="form-group">
+                                    <label for="js-name"> Name: </label>
+
+                                    <input type="text" class="form-control" id="js-name" placeholder="Enter name" required="required" />
                                 </div>
                                 <div class="form group">
                                     <label for="js-email">Email:</label>
 
-                      <div class="input-group">
-                                    <span class="input-group-addon"><span class = "glyphicon glyphicon-envelope"></span> </span>
-                                      <input type="email" class="form-control" id="js-email" placeholder="Enter email" required="required" /></div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class = "glyphicon glyphicon-envelope"></span> </span>
+                                        <input type="email" class="form-control" id="js-email" placeholder="Enter email" required="required" /></div>
                                 </div>
                                 <div class="form group">
                                     <label for="js-PhoneNumber">
-                                  Phone Number</label>
+                                  Phone Number:</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span>
                                         </span>
-                                        <input type="text" class="form-control" id="js-phoneNumber" placeholder="Enter Phone Number" required="required" /></div>
+                                        <input type="tel" class="form-control" id="js-phoneNumber" placeholder="Enter Phone Number" required="required" /></div>
                                 </div>
                                 <div class="form group">
-                                          <label for="js-subject"> Subject</label>
+                                    <label for="js-subject"> Subject:</label>
                                     <select id="js-subject" name="subject" class="form-control" required="required">
                                                       <option value="na" selected="">Choose One:</option>
                                                      <option value="comments">Comments</option>
@@ -93,193 +107,222 @@
                                                       <option value="Event Interest">Event Interest</option>
                                                          <option value="Miscellaneous">Miscellaneous</option>
                                                                    </select>
-                                                              </div>
-                                                          </div>
-                                                          <div class="col-md-6">
-                                                <div class="form group">
-                                                          <label for="js-comments">Message:</label>
-                                                          <textarea name="message" id="js-comments" class="form-control" rows="14" cols="25" required="required" placeholder="Enter Message"></textarea>
-                                                        </div>
-                                            </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form group">
+                                    <label for="js-comments">Message:</label>
+                                    <textarea name="message" id="js-comments" class="form-control" rows="11" cols="25" required="required" placeholder="Enter Message"></textarea>
+                                </div>
+                            </div>
 
-      <div class="form-group">
-          <div class = "col-xs-6">
-        <label for="js-password">Password</label>
-        <input type="password" id="js-password" class="form-control" />
-      </div>
-    </div>
-    </div>
-    <div class="col-md-12">
-                     <button type="js-submit" id="success" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
-                     Send Message</button>
-                 </div>
-             </div>
-         </form>
-     </div>
+                            <div class="col-md-12">
+                                <button type="js-submit" class="btn btn-success btn-lg pull-right RbtnMargin" id="ContactButton">
+                          Send Message</button>
+                            </div>
+                        </div>
 
-  </form>
-</div>
-</div>
-</div>
+                    </form>
+                </div>
+
+                <!-- Begin Contact Information Div-->
+                <div class="container">
+                    <div class="fixed">
+                        <div class="col-sm-4">
+
+                            <div class="well well sm">
+                                <h7> Contact Information </h7>
+                                </br>
+                                <h3 class="glyphicon glyphicon-map-marker"> City: </h3>
+                                <p3>Zionsville Indiana</p3>
+
+                                <h3 class="glyphicon glyphicon-envelope"> Email:</h3>
+                                <p3>ssinger@indy.rr.com</p3>
+
+                                <h3 class="glyphicon glyphicon-phone"> Phone:</h3>
+                                <p3> (317)-209-5518</p3>
+
+                            </div>
+                        </div>
 
 
-                    <div id="thankyouBlock" style="display:none">
-                      <p1> thanks for submitting your form!</p1>
-                    </div>
-<!--Pushes information to email (formspree)-->
-                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-                    <script type="text/javascript">
-                        $(document).ready(function() {
 
-                            $('#contactForm').on('submit', function(e) {
-                                e.preventDefault();
+                        <!--Pushes information to email (formspree)-->
+                        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-                                //get the name field value
-                                var name = $('#js-name').val();
-                                //get the name field value
-                                var email = $('#js-email').val();
+                        <script type="text/javascript">
+                            $(document).ready(function() {
 
-                                //get the phone number field
-                                var phoneNumber = $('#js-phoneNumber').val();
+                                $('#contactForm').on('submit', function(e) {
+                                    e.preventDefault();
 
-                                //gets subject
-                                var subject = $('#js-subject').val();
+                                    //get the name field value
+                                    var name = $('#js-name').val();
+                                    //get the name field value
+                                    var email = $('#js-email').val();
 
-                                //get the comments
-                                var comments = $('#js-comments').val();
+                                    //get the phone number field
+                                    var phoneNumber = $('#js-phoneNumber').val();
 
-                                //send to formspree
-                                $.ajax({
-                                    url: 'https://formspree.io/alisonsinger_2017@depauw.edu',
-                                    method: 'POST',
-                                    data: {
-                                        name: name,
-                                        phoneNumber: phoneNumber,
-                                        subject: subject,
-                                        _replyto: email,
-                                        email: email,
-                                        comments: comments,
-                                        _subject: 'My Form Submission',
-                                    },
-                                    dataType: "json",
-                                    success: function() {
-                                        console.log('success');
-                                        $('#formBlock').hide();
-                                        $('#thankyouBlock').show();
-                                    }
+                                    //gets subject
+                                    var subject = $('#js-subject').val();
+
+                                    //get the comments
+                                    var comments = $('#js-comments').val();
+
+                                    //send to formspree
+                                    $.ajax({
+                                        url: 'https://formspree.io/alisonsinger_2017@depauw.edu',
+                                        method: 'POST',
+                                        data: {
+                                            name: name,
+                                            phoneNumber: phoneNumber,
+                                            subject: subject,
+                                            _replyto: email,
+                                            email: email,
+                                            comments: comments,
+                                            _subject: 'My Form Submission',
+                                        },
+                                        dataType: "json",
+                                        success: function() {
+                                            console.log('success');
+
+                                            //routes to thank you block above on success
+                                            $('#thankyouBlock').show();
+                                        }
+                                    });
                                 });
                             });
+                        </script>
+
+                        <!-- Stores data in database (firebasejs)-->
+                        <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c></a>
+                    </div>
+
+                    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+
+
+
+                    <!-- Storing contact information into DB-->
+                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        $(function() {
+                            const config = {
+                                apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
+                                authDomain: "test-ac082.firebaseapp.com",
+                                databaseURL: "https://test-ac082.firebaseio.com",
+                                storageBucket: "test-ac082.appspot.com",
+                                messagingSenderId: "487246794807"
+                            };
+                            firebase.initializeApp(config);
+                            const state = {
+                                email: "alisonsinger_2017@depauw.edu",
+                                password: "Mittens3!",
+
+                            }
+
+                            $('.js-form').on('submit', event => {
+                                event.preventDefault();
+                                const email = state.email;
+                                const userEmail = $('#js-email').val();
+                                const password = state.password;
+                                const message = $('#js-comments').val();
+                                const name = $('#js-name').val();
+                                const phoneNumber = $('#js-phoneNumber').val();
+                                const subject = $('#js-subject').val();
+                                console.log(email, password, message);
+                                firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+                                        state.email = email;
+                                        state.password = password;
+                                        $('#js-login-data').addClass('hidden');
+
+                                        firebase.database().ref('messages').push({
+                                            message,
+                                        });
+
+                                        firebase.database().ref('emails').push({
+                                            userEmail,
+                                        });
+
+                                        firebase.database().ref('Names').push({
+                                            name,
+                                        });
+
+                                        firebase.database().ref('Phone Number').push({
+                                            phoneNumber,
+                                        });
+
+                                        firebase.database().ref('Subject').push({
+                                            subject,
+                                        });
+
+
+
+                                        $('.js-form').trigger('reset');
+                                    })
+                                    .catch(error => {
+                                        console.log(error);
+                                    });
+
+                            });
                         });
-
-
                     </script>
 
-          <!-- Stores data in database (firebasejs)-->
-                    <a href=https://firebasestorage.googleapis.com/v0/b/test-ac082..appspot.com/o/webpages%2Findex.html?alt=media&token=a6b7f762-a0b0-45b8-abea-e0cc0635722c></a>
-                  </div>
-
-                      <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 
 
-                  <div align="center">
-                  <a
+                    <!-- Google Maps API-->
+                    <div id="googleMap" style="height:500px; width:1100px; margin-top: 90px;"></div>
+                    <script>
+                        function initMap() {
+                            var myCenter = new google.maps.LatLng(39.9617911, -86.273442);
+                            var mapProp = {
+                                center: myCenter,
+                                zoom: 12,
+                                scrollwheel: false,
+                                draggable: true,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+                            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                            var marker = new google.maps.Marker({
+                                position: myCenter
+                            });
+                            marker.setMap(map);
+                        }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw3QVljVdk8JQtKv7oC_-BQ3lUbgn_A_Q&callback=initMap"></script>
 
-                  </div>
-                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-                  <script type="text/javascript">
-                      $(function() {
-                    const config = {
-                      apiKey: "AIzaSyDJrEtdl8mBXTaiL1vqgTVyNtGrilOMOs0",
-                      authDomain: "test-ac082.firebaseapp.com",
-                      databaseURL:  "https://test-ac082.firebaseio.com",
-                      storageBucket: "test-ac082.appspot.com",
-                      messagingSenderId: "487246794807"
-                    };
-                    firebase.initializeApp(config);
-                    const state ={
-                     email: "",
-                      password: "",
+                    <!--Footer-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="mendi-social-networks">
+                                <li class="instagram">
+                                    <a href="https://www.instagram.com/stacyscatering/" target="_blank">
+                                        <i class="fa fa-instagram"> </i>
+                                        <p>FOLLOW US ON INSTAGRAM!</p>
 
-                    }
+                                    </a>
+                                </li>
 
-                    $('.js-form').on('submit', event => {
-                      event.preventDefault();
-                      const email = $('#js-email').val() || state.email;
-                      const password = $('#js-password').val() || state.password;
-                      const message = $('#js-comments').val();
-                      const name = $('#js-name').val();
-                      const phoneNumber = $('#js-phoneNumber').val();
-                      const subject = $('#js-subject').val();
-                      console.log(email, password, message);
-                      firebase.auth().signInWithEmailAndPassword(email, password).then(function(user)
-                      {
-                        state.email = email;
-                        state.password = password;
-                        $('#js-login-data').addClass('hidden');
+                                <li class="facebook">
+                                    <a href="https://www.facebook.com/Stacys-Catering-1808443872808877/" target="_blank">
+                                        <i class="fa fa-facebook"> </i>
+                                        <p> FOLLOW US ON FACEBOOK!</p>
 
-                        firebase.database().ref('messages').push({
-                        message,
-                        });
+                                    </a>
+                                </li>
 
-                        firebase.database().ref('emails').push({
-                        email,
-                        });
-
-                        firebase.database().ref('Names').push({
-                        name,
-                        });
-
-                        firebase.database().ref('Phone Number').push({
-                        phoneNumber,
-                        });
-
-                        firebase.database().ref('Subject').push({
-                        subject,
-                        });
+                                <li class="twitter">
+                                    <a href="https://twitter.com/StacysCatering" target="_blank">
+                                        <i class="fa fa-twitter"> </i>
+                                        <p>FOLLOW US ON TWITTER!</p>
+                                    </a>
+                                </li>
 
 
-
-                       $('.js-form').trigger('reset');
-                      })
-                      .catch(error =>{
-                      console.log(error);
-                      });
-
-                    });
-                  });</script>
-
-                      </body>
-                  </html>
-
-
-<!-- <div class="col-md-4">
-                               <span class="glyphicon glyphicon-map-marker"></span>
-                               <p1> Address: 4317 Creekside Pass Zionsville, IN 46077 </p1>
-                               <span class="glyphicon glyphicon-phone"></span>
-                            <h2cu> Phone Number: (317)-626-6971 </h2cu>
-                          </div> -->
-<!-- Google Maps API-->
-<div id="googleMap" style="height:500px; width:1100px;"></div>
-<script>
-    function initMap() {
-        var myCenter = new google.maps.LatLng(39.9617911, -86.273442);
-        var mapProp = {
-            center: myCenter,
-            zoom: 12,
-            scrollwheel: false,
-            draggable: true,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({
-            position: myCenter
-        });
-        marker.setMap(map);
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw3QVljVdk8JQtKv7oC_-BQ3lUbgn_A_Q&callback=initMap"></script>
-</div>
-
+                            </ul>
+                        </div>
+                    </div>
 </body>
 
 </html>
